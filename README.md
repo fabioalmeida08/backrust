@@ -1,7 +1,7 @@
 # Backrust
 
 ## What is this ? 
-a simple rust backup script that send a email with size of the backup at end of operation :)
+a simple rust backup program that compress the files in tar.gz format and send a email with size of the backup at end of operation :)
 
 ## Why?
 to learn more about Rust ❤️
