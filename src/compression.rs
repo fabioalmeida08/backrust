@@ -9,7 +9,7 @@ pub fn compression() -> Result<String, std::io::Error> {
     let home = env::var("HOME").unwrap();
 
     let filename: DateTime<Local> = Local::now();
-    let filename: String = format!("backup_{}.tar.gz", filename.format("%d_%m_%Y"));
+    let filename: String = format!("{}.tar.gz", filename.format("%d_%m_%Y"));
 
     let tar_gz = File::create(&filename)?;
     let enc = GzEncoder::new(tar_gz, Compression::default());
