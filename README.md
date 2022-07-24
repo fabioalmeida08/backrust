@@ -9,6 +9,7 @@ to learn more about Rust ❤️
 # To-Do List
 - [x] Create the backup filename with a date.
 - [x] Pickup multiples directories to backup.
-- [ ] A log with more detailed info to be sent via email.
+- [x] A log with more detailed info to be sent via email.
 - [x] Check if there a backupfile with more than 7 days and delete it.
+- [ ] Do a better error handling
 - [ ] Refactor
