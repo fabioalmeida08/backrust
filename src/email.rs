@@ -9,7 +9,7 @@ pub fn send_email(log: &String) {
     let email = Message::builder()
         .from(env::var("EMAIL").unwrap().parse().unwrap())
         .to(env::var("EMAIL").unwrap().parse().unwrap())
-        .subject("Backup Done")
+        .subject("Backup")
         .body(log.to_string())
         .unwrap();
 
