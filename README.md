@@ -11,5 +11,6 @@ to learn more about Rust ❤️
 - [x] Pickup multiples directories to backup.
 - [x] A log with more detailed info to be sent via email.
 - [x] Check if there a backupfile with more than 7 days and delete it.
-- [ ] Do a better error handling
-- [ ] Refactor
+- [x] Send a email if something goes wrong.
+- [x] Do a better error handling.
+- [ ] Refactor.
