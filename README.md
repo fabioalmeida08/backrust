@@ -1,7 +1,7 @@
 # Backrust
 
 ## What is this ? 
-a simple rust backup program that compress the files in tar.gz format and send a email with size of the backup at end of operation :)
+a rust backup program that compress the files in tar.gz format and save to a s3 bucket and send a notification via email at end of operation :)
 
 ## Why?
 to learn more about Rust ❤️
@@ -13,4 +13,5 @@ to learn more about Rust ❤️
 - [x] Check if there a backupfile with more than 7 days and delete it.
 - [x] Send a email if something goes wrong.
 - [x] Do a better error handling.
+- [x] integration with s3 with aws sdk
 - [ ] Refactor.
