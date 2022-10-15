@@ -25,7 +25,7 @@ async fn upload_object(
                 .await?;
 
             println!("Upload success. Version: {:?}", resp.version_id.unwrap());
-        },
+        }
         Err(e) => {
             println!("Got an error uploading object:");
             println!("{}", e);
@@ -36,7 +36,11 @@ async fn upload_object(
     Ok(())
 }
 
-pub async fn upload_object_s3(filename: &str, client: &Client, bucket: &str) -> Result<(), Error> {
+pub async fn upload_object_s3(
+    filename: &str,
+    client: &Client,
+    bucket: &str,
+) -> Result<String, Error> {
     println!();
 
     let key = &filename;
@@ -49,7 +53,15 @@ pub async fn upload_object_s3(filename: &str, client: &Client, bucket: &str) -> 
         println!();
     }
 
-    upload_object(&client, &bucket, &filename, &key).await
+    let log = format!(
+        "S3 client version: {}\n
+        Bucket:            {}\n
+        Filename:          {}\n
+        Key:               {}\n",
+        PKG_VERSION, &bucket, &filename, &key
+    );
+    _ = upload_object(&client, &bucket, &filename, &key).await;
+    Ok(log)
 }
 
 pub async fn remove_old_objects_from_s3(client: &Client, bucket: &str) -> Result<(), Error> {
